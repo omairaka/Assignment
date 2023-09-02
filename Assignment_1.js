@@ -1,12 +1,4 @@
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
+"use strict";
 //First Question
 var ar = [4, 3, 6, 1, 7];
 function updater(arr, index, value) {
@@ -15,10 +7,10 @@ function updater(arr, index, value) {
 updater([3], 0, 3);
 console.log(ar);
 //Second Question
-var items = ["Mortein", "Nestle Water ", "Sugar", "Yogurt"];
-var app = ["Banana"];
+let items = ["Mortein", "Nestle Water ", "Sugar", "Yogurt"];
+let app = ["Banana"];
 function add_items(items, index, app) {
-    items.splice.apply(items, __spreadArray([index, 0], app, false));
+    items.splice(index, 0, ...app);
 }
 add_items(items, 0, app);
 console.log(items);
@@ -71,3 +63,12 @@ function sum_of_numbers(array) {
 }
 sum_of_numbers([-1, 6, 4, 1]);
 //Eighth Question
+var celcius = [25, 89, 34, 4];
+var i = 0;
+var fahrenheit_array = [];
+while (celcius.length > i) {
+    var fahrenheit = (celcius[i] * 9 / 5) + 32;
+    fahrenheit_array.push(fahrenheit);
+    i++;
+}
+console.log(fahrenheit_array);
